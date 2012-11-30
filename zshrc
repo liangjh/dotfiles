@@ -1,3 +1,29 @@
+##
+#  Z-shell initialization
+#
+
+# --- zest initializations
+
+
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
+# PATH settings
+PATH=$PATH:/opt/local/lib/mysql5/bin/
+PATH=$PATH:/opt/bin/
+
+# BORK
+source ~/.ssh/zest_aws_bork
+export scout_username=jhl
+export scout_password=jhl
+
+# Passphrase
+export EPHRASE="ed hardy needs a loan"
+
+
+# --- from thoughtbot
+
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
@@ -14,6 +40,7 @@ export EDITOR=vim
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
+  source "$HOME/.zest_aliases"
 fi
 
 # vi mode
