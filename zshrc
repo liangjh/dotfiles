@@ -2,24 +2,17 @@
 #  Z-shell initialization
 #
 
-# --- zest initializations
+# --- local initializations
 
+#  All personal stuff goes into my zshrc 
+if [ -e "$HOME/.my_zshrc" ]; then
+  source "$HOME/.my_zshrc"
+fi
 
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
-# PATH settings
-PATH=$PATH:/opt/local/lib/mysql5/bin/
-PATH=$PATH:/opt/bin/
-
-# BORK
-source ~/.ssh/zest_aws_bork
-export scout_username=jhl
-export scout_password=jhl
-
-# Passphrase
-export EPHRASE="ed hardy needs a loan"
+# my aliases
+if [ -e "$HOME/.my_aliases" ]; then
+  source "$HOME/.my_aliases"
+fi
 
 
 # --- from thoughtbot
@@ -40,7 +33,6 @@ export EDITOR=vim
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
-  source "$HOME/.zest_aliases"
 fi
 
 # vi mode
